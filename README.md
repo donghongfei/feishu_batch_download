@@ -22,9 +22,6 @@
 
 - 🚀 自动获取完整文档结构
 - 📥 批量下载为 Markdown 格式
-- 🔌 自动加载导出插件,无需手动安装
-- 🎯 支持自定义下载目录
-- 🔒 通过环境变量管理敏感信息
 
 ## 🛠 准备工作
 
@@ -67,7 +64,7 @@ python export_markdown.py
 
 1. **获取 Cookie**
 
-   - 打开飞书知识库
+   - 登录飞书，打开飞书知识库
    - 按 F12 打开开发者工具
    - 找到任意请求,复制完整 Cookie
 
@@ -77,8 +74,9 @@ python export_markdown.py
    - 或在首页 URL 参数中找`space_id=xxxxx`
 
 3. **获取文档 Token**
-   - 从要下载的文档 URL 中复制 token 部分
-   - 形如`RXdbwRyASiShtDky381ciwFEnpe`
+   - 通过 Chrome 浏览器控制台，查看要下载的 wiki 页面网络请求
+   - 找到类似链接：`https://langgptai.feishu.cn/space/api/wiki/v2/tree/get_info/?space_id=7260334668648644609&with_space=true&with_perm=true&expand_shortcut=true&need_shared=true&exclude_fields=5&with_deleted=true&wiki_token=RXdbwRyASiShtDky381ciwFEnpe&synced_block_host_token=CKzqdVFFTooOsbxttXmcGebInOb&synced_block_host_type=22`
+   - wiki_token 参数，形如`RXdbwRyASiShtDky381ciwFEnpe`
 
 ## ❗️ 常见问题
 
@@ -86,7 +84,6 @@ python export_markdown.py
 
    - 检查 Cookie 是否过期
    - 确认 Chrome 版本与 ChromeDriver 版本匹配
-   - 查看控制台报错信息
 
 2. **获取文档树失败**
    - 验证环境变量是否正确设置
