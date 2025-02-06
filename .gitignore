@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.env
+.DS_Store
+myenv/
+venv/
+
+# 输出文件
+download_output/
+wiki_tree.json
+*.log
+
+# IDE
+.idea/
+.vscode/
