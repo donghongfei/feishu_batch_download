@@ -18,6 +18,11 @@
 1. 获取完整的知识库文档树
 2. 批量下载文档为 Markdown 格式
 
+> 📝 **特别说明**
+>
+> 1. 本项目使用了 Cloud Document Converter 插件。为实现静默下载,对原插件做了修改,修改版源码见: [donghongfei/cloud-document-converter](https://github.com/donghongfei/cloud-document-converter)
+> 2. 默认提供的 ChromeDriver 适用于 Mac M 芯片。其他设备请参考[ChromeDriver 下载页面](https://developer.chrome.com/docs/chromedriver/downloads?hl=zh-cn)下载对应版本。
+
 ## ✨ 特性
 
 - 🚀 自动获取完整文档结构
@@ -35,8 +40,15 @@ pip install -r requirements.txt
 
 3. **准备必要文件**:
 
-   - 下载[ChromeDriver](https://chromedriver.chromium.org/downloads),放到 extensions 目录
-   - 下载[Cloud Document Converter](https://github.com/whale4113/cloud-document-converter)插件,放到 extensions 目录
+   > 💡 为了方便使用,项目已内置以下文件到 extensions 目录:
+   >
+   > - ChromeDriver (当前适配 Mac M 芯片)
+   > - Cloud Document Converter 插件(已修改支持静默下载)
+
+   如需自行准备:
+
+   - 下载[ChromeDriver](https://chromedriver.chromium.org/downloads) 对应版本,放到 extensions 目录
+   - 从[donghongfei/cloud-document-converter](https://github.com/donghongfei/cloud-document-converter) 下载源码，自行编译后，放到 extensions 目录。具体方法可以问chatGPT。
 
 4. **配置环境变量**:
    - 复制`.env.example`为`.env`
@@ -102,3 +114,5 @@ MIT License
 
 - [Cloud Document Converter](https://github.com/whale4113/cloud-document-converter): 提供 Markdown 导出功能
 - [Selenium](https://www.selenium.dev/): 提供浏览器自动化支持
+- [Gemini 2.0 Flash Thinking Experimental](https://gemini.google.com/app): 编码调试支持
+- [Claude](https://claude.ai): 项目结构调整及文档编写
